@@ -115,10 +115,10 @@ export default function DashboardView({ data, onSelectQuery, setActiveTab }) {
             display: 'flex',
             alignItems: 'center',
             background: '#FFFFFF',
-            border: '1.5px solid #2563EB',
+            border: '1.5px solid var(--border-color)',
             borderRadius: '12px',
             padding: '0.25rem 0.35rem 0.25rem 1rem',
-            boxShadow: '0 6px 20px rgba(37, 99, 235, 0.1)'
+            boxShadow: '0 6px 20px rgba(178, 94, 48, 0.08)'
           }}>
             <input
               type="text"
@@ -131,7 +131,7 @@ export default function DashboardView({ data, onSelectQuery, setActiveTab }) {
                 border: 'none',
                 outline: 'none',
                 fontSize: '0.9rem',
-                color: '#111827',
+                color: 'var(--text-primary)',
                 background: '#FFFFFF',
                 fontFamily: 'Inter'
               }}
@@ -160,7 +160,7 @@ export default function DashboardView({ data, onSelectQuery, setActiveTab }) {
                 type="button"
                 onClick={handleHeroSubmit}
                 style={{
-                  background: 'linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%)',
+                  background: 'linear-gradient(135deg, var(--secondary-indigo) 0%, var(--primary-blue) 100%)',
                   border: 'none',
                   borderRadius: '8px',
                   padding: '0.5rem 1.1rem',
@@ -171,7 +171,7 @@ export default function DashboardView({ data, onSelectQuery, setActiveTab }) {
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.4rem',
-                  boxShadow: '0 4px 12px rgba(37, 99, 235, 0.25)'
+                  boxShadow: '0 4px 12px rgba(178, 94, 48, 0.25)'
                 }}
               >
                 <Send size={14} />

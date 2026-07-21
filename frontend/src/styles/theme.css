@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg-main: #F8FAFC;
-  --bg-card: #FFFFFF;
-  --border-color: #E5E7EB;
-  --primary-blue: #2563EB;
-  --secondary-indigo: #4F46E5;
-  --success-green: #16A34A;
-  --warning-gold: #F59E0B;
+  --bg-main: #F7F4EB;       /* Premium Cream/Warm Stone */
+  --bg-card: #FFFFFF;       /* Pure White Card */
+  --border-color: #EADFC9;   /* Warm Sand Accent Border */
+  --primary-blue: #1E3A8A;   /* Royal Deep Navy (high contrast accent) */
+  --secondary-indigo: #B25E30; /* Premium Terracotta/Amber */
+  --success-green: #1F7A42;
+  --warning-gold: #D97706;
   --danger-red: #DC2626;
-  --text-primary: #111827;
-  --text-secondary: #6B7280;
+  --text-primary: #2D241E;   /* Rich Charcoal/Espresso */
+  --text-secondary: #72655A; /* Deep Warm Sand */
 
   --sidebar-width: 200px;
   --header-height: 56px;
@@ -21,8 +21,8 @@
   --border-radius: 14px;
 
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
-  --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 10px 25px -5px rgba(0, 0, 0, 0.04);
-  --shadow-hover: 0 10px 30px -5px rgba(37, 99, 235, 0.12), 0 4px 12px 0 rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 2px 8px -2px rgba(45, 36, 30, 0.06), 0 8px 16px -4px rgba(45, 36, 30, 0.04);
+  --shadow-hover: 0 12px 24px -6px rgba(178, 94, 48, 0.12), 0 4px 12px 0 rgba(45, 36, 30, 0.04);
 }
 
 * {
@@ -273,6 +273,92 @@ body {
   .mobile-toggle-btn {
     display: flex;
   }
+}
+
+/* Premium Sidebar Tactile Button Classes */
+.sidebar-nav-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.sidebar-btn-tactile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  background: #FFFFFF;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(45, 36, 30, 0.05);
+}
+
+.sidebar-btn-tactile:hover {
+  background: #FCFAF7;
+  border-color: #CDBFAD;
+  color: var(--text-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(45, 36, 30, 0.06);
+}
+
+.sidebar-btn-tactile.active {
+  background: var(--border-color);
+  border-color: #BCAF97;
+  color: var(--primary-blue);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.recent-question-chip {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.725rem;
+  padding: 0.45rem 0.65rem;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(45, 36, 30, 0.03);
+}
+
+.recent-question-chip:hover {
+  background: #FCFAF7;
+  color: var(--primary-blue);
+  border-color: #CDBFAD;
+  transform: translateX(2px);
+}
+
+.quick-filter-btn {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  color: var(--secondary-indigo);
+  font-weight: 700;
+  font-size: 0.725rem;
+  padding: 0.45rem 0.65rem;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(45, 36, 30, 0.03);
+}
+
+.quick-filter-btn:hover {
+  background: #FDF9F2;
+  border-color: var(--secondary-indigo);
+  transform: translateX(2px);
 }
 
 

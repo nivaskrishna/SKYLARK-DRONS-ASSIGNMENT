@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Send, Bot, User, Sparkles, HelpCircle, AlertTriangle, CheckCircle2, ArrowRight, RefreshCw, FileText, Download, Database, Cpu, MessageSquare, ChevronDown, ChevronUp, Layers, Info, ShieldAlert } from 'lucide-react';
 import { formatCurrency } from '../utils/formatters';
 
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
 const SUGGESTED_QUESTIONS = [
   "How is our Energy pipeline this quarter?",
   "Show only Energy deals",
@@ -103,7 +105,7 @@ export default function ChatInterface({ dashboardData, defaultQuery, setActiveTa
     }
 
     try {
-      const res = await fetch('http://localhost:8000/api/chat', {
+      const res = await fetch(`${API_BASE}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query: q })

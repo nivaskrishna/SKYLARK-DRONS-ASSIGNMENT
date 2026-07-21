@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { FileSpreadsheet, Copy, Check, RefreshCw, Sparkles, Download, FileText, Printer } from 'lucide-react';
 
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
 export default function LeadershipUpdateView() {
   const [updateData, setUpdateData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -9,7 +11,7 @@ export default function LeadershipUpdateView() {
   const fetchUpdate = async () => {
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:8000/api/executive-report', { method: 'POST' });
+      const res = await fetch(`${API_BASE}/api/executive-report`, { method: 'POST' });
       const data = await res.json();
       if (data.status === 'success') {
         setUpdateData(data.report);

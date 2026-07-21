@@ -19,8 +19,8 @@ export default function Navbar({ onRefresh, isRefreshing, dashboardData, onOpenC
   return (
     <header style={{
       height: '56px',
-      background: '#FFFFFF',
-      borderBottom: '1px solid #E5E7EB',
+      background: 'var(--bg-card)',
+      borderBottom: '1px solid var(--border-color)',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
@@ -40,9 +40,9 @@ export default function Navbar({ onRefresh, isRefreshing, dashboardData, onOpenC
         alignItems: 'center',
         gap: '0.5rem',
         padding: '0 0.75rem',
-        borderRight: '1px solid #E5E7EB',
+        borderRight: '1px solid var(--border-color)',
         flexShrink: 0,
-        background: '#FFFFFF',
+        background: 'var(--bg-card)',
         boxSizing: 'border-box'
       }}>
         {/* Mobile Toggle Button */}
@@ -51,7 +51,7 @@ export default function Navbar({ onRefresh, isRefreshing, dashboardData, onOpenC
           style={{
             background: 'none',
             border: 'none',
-            color: '#374151',
+            color: 'var(--text-primary)',
             cursor: 'pointer',
             padding: '0.2rem',
             display: 'flex',
@@ -68,11 +68,11 @@ export default function Navbar({ onRefresh, isRefreshing, dashboardData, onOpenC
           width: '32px',
           height: '32px',
           borderRadius: '8px',
-          background: 'linear-gradient(135deg, #2563EB 0%, #4F46E5 100%)',
+          background: 'linear-gradient(135deg, var(--secondary-indigo) 0%, var(--primary-blue) 100%)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          boxShadow: '0 2px 8px rgba(37, 99, 235, 0.3)',
+          boxShadow: '0 2px 8px rgba(178, 94, 48, 0.3)',
           flexShrink: 0
         }}>
           {/* Drone SVG - quadcopter top view */}
@@ -90,14 +90,14 @@ export default function Navbar({ onRefresh, isRefreshing, dashboardData, onOpenC
             {/* Body */}
             <rect x="12" y="12" width="8" height="8" rx="2" fill="white"/>
             {/* Center dot (camera) */}
-            <circle cx="16" cy="16" r="1.5" fill="#2563EB"/>
+            <circle cx="16" cy="16" r="1.5" fill="var(--primary-blue)"/>
           </svg>
         </div>
         <div style={{ overflow: 'hidden' }}>
-          <div style={{ fontSize: '0.925rem', fontWeight: 800, color: '#111827', lineHeight: 1.1, fontFamily: 'Plus Jakarta Sans', whiteSpace: 'nowrap' }}>
+          <div style={{ fontSize: '0.925rem', fontWeight: 800, color: 'var(--text-primary)', lineHeight: 1.1, fontFamily: 'Plus Jakarta Sans', whiteSpace: 'nowrap' }}>
             SkyLark
           </div>
-          <div style={{ fontSize: '0.625rem', color: '#6B7280', fontWeight: 600, whiteSpace: 'nowrap' }}>
+          <div style={{ fontSize: '0.625rem', color: 'var(--text-secondary)', fontWeight: 600, whiteSpace: 'nowrap' }}>
             AI BI Platform
           </div>
         </div>

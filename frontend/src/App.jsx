@@ -14,6 +14,8 @@ import RiskCenterView from './components/RiskCenterView';
 
 import './styles/theme.css';
 
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
 export default function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [dashboardData, setDashboardData] = useState(null);
@@ -30,7 +32,7 @@ export default function App() {
     setError(null);
 
     try {
-      const endpoint = force ? 'http://localhost:8000/api/boards/refresh' : 'http://localhost:8000/api/dashboard';
+      const endpoint = force ? `${API_BASE}/api/boards/refresh` : `${API_BASE}/api/dashboard`;
       const res = await fetch(endpoint);
       const json = await res.json();
 
