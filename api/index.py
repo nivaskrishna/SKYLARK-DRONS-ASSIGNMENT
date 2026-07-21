@@ -1,0 +1,10 @@
+import sys
+import os
+
+# Add root to path so backend imports resolve
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from backend.main import app
+
+# Vercel expects the app object to be the ASGI handler
+handler = app
