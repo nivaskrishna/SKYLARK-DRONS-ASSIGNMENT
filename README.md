@@ -1,3 +1,7 @@
+
+PROJECT LIVE DEMO
+https://frontend-murex-omega-39.vercel.app
+
 # Skylark Drones - Monday.com Business Intelligence Agent
 
 An executive AI Business Intelligence Agent designed for founders and executives at Skylark Drones. It dynamically reads data from Monday.com boards (Deals & Work Orders), performs automated data sanitization, computes cross-board analytics, and generates intelligent business insights, risks, recommendations, and leadership updates.
