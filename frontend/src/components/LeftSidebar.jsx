@@ -184,5 +184,6 @@ export default function LeftSidebar({ activeTab, setActiveTab, onSelectQuery, is
         <div style={{ color: '#6B7280', fontSize: '0.65rem' }}>Deals & Work Orders Sync</div>
       </div>
     </aside>
+    </>
   );
 }

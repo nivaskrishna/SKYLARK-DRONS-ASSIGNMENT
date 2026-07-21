@@ -265,3 +265,14 @@ body {
   }
 }
 
+.mobile-toggle-btn {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .mobile-toggle-btn {
+    display: flex;
+  }
+}
+
+

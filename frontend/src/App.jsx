@@ -22,6 +22,7 @@ export default function App() {
   const [error, setError] = useState(null);
   const [isCmdOpen, setIsCmdOpen] = useState(false);
   const [selectedQuery, setSelectedQuery] = useState('');
+  const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
 
   const loadDashboard = async (force = false) => {
     if (force) setIsRefreshing(true);
@@ -63,12 +64,20 @@ export default function App() {
         isRefreshing={isRefreshing}
         dashboardData={dashboardData}
         onOpenCommandPalette={() => setIsCmdOpen(true)}
+        onToggleSidebar={() => setIsMobileSidebarOpen(prev => !prev)}
+        isSidebarOpen={isMobileSidebarOpen}
       />
 
       {/* Main Body Layout */}
       <div className="app-body">
         {/* Left Sidebar */}
-        <LeftSidebar activeTab={activeTab} setActiveTab={setActiveTab} onSelectQuery={handleSelectQuery} />
+        <LeftSidebar
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+          onSelectQuery={handleSelectQuery}
+          isMobileOpen={isMobileSidebarOpen}
+          onCloseMobile={() => setIsMobileSidebarOpen(false)}
+        />
 
         {/* Center Main Content Area (Spacious Workspace with Max Width 1600px) */}
         <main className="main-container">

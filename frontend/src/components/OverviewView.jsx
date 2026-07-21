@@ -49,7 +49,7 @@ export default function OverviewView({ data, onSelectQuery, setActiveTab }) {
       </div>
 
       {/* 6 Core KPI Cards */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem' }}>
         {[
           {
             icon: TrendingUp, label: 'Total Pipeline', value: formatCurrency(pipe.total_pipeline_value),
@@ -113,7 +113,7 @@ export default function OverviewView({ data, onSelectQuery, setActiveTab }) {
       </div>
 
       {/* Two-column layout */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
 
         {/* Top Sectors */}
         <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '14px', padding: '1.25rem' }}>
@@ -176,7 +176,7 @@ export default function OverviewView({ data, onSelectQuery, setActiveTab }) {
           <div style={{ fontSize: '0.875rem', fontWeight: 700, color: '#DC2626', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <Clock size={16} /> Top Delayed Work Orders — Needs Immediate Action
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.65rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.65rem' }}>
             {delayed.slice(0, 6).map((wo, i) => (
               <div key={i} style={{ background: '#FFFFFF', borderRadius: '10px', padding: '0.65rem 0.85rem', border: '1px solid rgba(220,38,38,0.15)' }}>
                 <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#111827', marginBottom: '0.2rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>

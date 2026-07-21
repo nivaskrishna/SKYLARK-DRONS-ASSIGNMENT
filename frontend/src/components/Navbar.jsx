@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Search, RefreshCw, Command, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { Search, RefreshCw, Command, CheckCircle2, ShieldCheck, Menu, X } from 'lucide-react';
 
-export default function Navbar({ onRefresh, isRefreshing, dashboardData, onOpenCommandPalette }) {
+export default function Navbar({ onRefresh, isRefreshing, dashboardData, onOpenCommandPalette, onToggleSidebar, isSidebarOpen }) {
   const [timeStr, setTimeStr] = useState('');
 
   useEffect(() => {
@@ -29,10 +29,10 @@ export default function Navbar({ onRefresh, isRefreshing, dashboardData, onOpenC
       zIndex: 50,
       boxShadow: '0 1px 3px rgba(0,0,0,0.02)',
       flexShrink: 0,
-      width: '100vw',
+      width: '100%',
       boxSizing: 'border-box'
     }}>
-      {/* 200px Brand Box - Perfectly matches 200px LeftSidebar below */}
+      {/* Brand Box + Mobile Toggle */}
       <div style={{
         width: '200px',
         height: '56px',
@@ -45,6 +45,25 @@ export default function Navbar({ onRefresh, isRefreshing, dashboardData, onOpenC
         background: '#FFFFFF',
         boxSizing: 'border-box'
       }}>
+        {/* Mobile Toggle Button */}
+        <button
+          onClick={onToggleSidebar}
+          style={{
+            background: 'none',
+            border: 'none',
+            color: '#374151',
+            cursor: 'pointer',
+            padding: '0.2rem',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            borderRadius: '6px'
+          }}
+          className="mobile-toggle-btn"
+          aria-label="Toggle Navigation"
+        >
+          {isSidebarOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
         <div style={{
           width: '32px',
           height: '32px',
